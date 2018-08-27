@@ -1,0 +1,60 @@
+{% extends 'index.html' %}
+
+{% block conteudo %}
+    {% csrf_token %}
+    <style>
+        .div{
+            border: 1px solid black;
+            width: 800px;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 5px;
+            box-shadow: 4px 4px 9px;
+            background-color: white;
+            padding:0px 0px 10px 0px;
+        }.div:hover{
+            transform: scaleX(1.01) scaleY(1.01);
+        }.container{
+            width: auto;
+            height: auto;
+        }#nome{
+            font-size: 20px;
+        }#hr{
+            margin-top: -20px;
+            width: 900px;
+        }hr{
+            width: 900px;
+
+            box-shadow: 4px 4px 9px;
+
+        }#titulo{
+            font-size: 20px;
+        }#descricao{
+            text-align: justify;
+            padding: 2em;
+        }#cortina{
+            background-color: red;
+            width: 900px;
+            height: 900px;
+            margin-top: -30px;
+
+        }
+    </style>
+    <hr id="hr"><br>   
+    <center>
+        <div id="container">
+            {% for n in list %}
+                    <div class="div">
+                        <br><br>
+                        <ul id="titulo"><b>{{ n.titulo }}</b></ul>
+                        <ul id="subtitulo">{{ n.subtitulo }}</ul>
+                        <p>
+                            <ul id="descricao">{{ n.descricao }}</ul>
+                        </p>
+                    </div>
+            {% endfor %}
+        </div>
+    </center>
+    <hr>
+
+{% endblock %}
