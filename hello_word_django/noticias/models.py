@@ -6,5 +6,8 @@ class noticias(models.Model):
     subtitulo = models.CharField(max_length=100)
     descricao = models.TextField(max_length=1000)
 
+    class meta:
+        verbose_name_plural = "noticias"
+
     def __str__(self):
         return self.titulo
